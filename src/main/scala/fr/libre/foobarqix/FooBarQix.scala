@@ -17,14 +17,34 @@ class FooBarQix(utils: FooBarQixUtils = new FooBarQixUtils) {
     def run(input: Int): String = {
         val responseBuilder: StringBuilder = new StringBuilder
 
-        if( input % 3 == 0 ) responseBuilder.append(FooBarQix.FOO)
-        if( input % 5 == 0 ) responseBuilder.append(FooBarQix.BAR)
-        if( input % 7 == 0 ) responseBuilder.append(FooBarQix.QIX)
+        responseBuilder append appendConsideringDivisibleNumber(input)
 
-        responseBuilder append utils.appendConsideringApparitionDigit( utils.splitIntOnDigit( input ) )
+        responseBuilder append appendConsideringApparitionDigit( utils.splitIntOnDigit( input ) )
 
         if( responseBuilder.isEmpty ) responseBuilder.append( input.toString )
 
         responseBuilder.toString()
+    }
+
+    private def appendConsideringDivisibleNumber( input: Int ): String = {
+        val responseBuilder: StringBuilder = new StringBuilder
+
+        if( input % 3 == 0 ) responseBuilder.append(FooBarQix.FOO)
+        if( input % 5 == 0 ) responseBuilder.append(FooBarQix.BAR)
+        if( input % 7 == 0 ) responseBuilder.append(FooBarQix.QIX)
+
+        responseBuilder.toString()
+    }
+
+    private def appendConsideringApparitionDigit(digits: List[Int]): String = {
+        digits.map {
+            digit =>
+                digit match {
+                    case 3 => FooBarQix.FOO
+                    case 5 => FooBarQix.BAR
+                    case 7 => FooBarQix.QIX
+                    case _ => FooBarQix.EMPTY
+                }
+        }.mkString
     }
 }

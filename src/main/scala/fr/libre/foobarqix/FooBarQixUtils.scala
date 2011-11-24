@@ -18,16 +18,4 @@ class FooBarQixUtils {
 
         l
     }
-
-    def appendConsideringApparitionDigit(digits: List[Int]): String = {
-        digits.map {
-            digit =>
-                digit match {
-                    case 3 => FooBarQix.FOO
-                    case 5 => FooBarQix.BAR
-                    case 7 => FooBarQix.QIX
-                    case _ => FooBarQix.EMPTY
-                }
-        }.mkString
-    }
 }
