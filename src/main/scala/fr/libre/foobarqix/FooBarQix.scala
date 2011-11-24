@@ -23,7 +23,7 @@ class FooBarQix(utils: FooBarQixUtils = new FooBarQixUtils) {
 
         responseBuilder append utils.appendConsideringApparitionDigit( utils.splitIntOnDigit( input ) )
 
-        if( responseBuilder.isEmpty ) responseBuilder.append(input.toString)
+        if( responseBuilder.isEmpty ) responseBuilder.append( input.toString )
 
         responseBuilder.toString()
     }

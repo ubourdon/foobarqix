@@ -1,8 +1,6 @@
 package fr.libre.foobarqix
 
-import org.junit.runner.RunWith
 import org.scalatest.matchers.ShouldMatchers
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 
 /**
@@ -15,7 +13,6 @@ import org.scalatest.{BeforeAndAfterEach, FunSuite}
  *  Si le nombre est divisible par 7 ou contient 7, écrire “Qix” à la place de 7.
  */
 
-@RunWith(classOf[JUnitRunner])
 class FooBarQixTest extends FunSuite with ShouldMatchers with BeforeAndAfterEach {
     val FBQ_3_VALUE: String = "FooFoo"
     val FBQ_5_VALUE: String = "BarBar"
