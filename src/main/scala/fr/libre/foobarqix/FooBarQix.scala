@@ -5,18 +5,21 @@ package fr.libre.foobarqix
  * Date: 23/11/11
  */
 
-class FooBarQix(utils: FooBarQixUtils = new FooBarQixUtils) {
+object FooBarQix {
+    val FOO: String = "Foo"
+    val BAR: String = "Bar"
+    val QIX: String = "Qix"
+    val EMPTY: String = ""
+}
 
-    val Foo: String = "Foo"
-    val Bar: String = "Bar"
-    val Qix: String = "Qix"
+class FooBarQix(utils: FooBarQixUtils = new FooBarQixUtils) {
 
     def run(input: Int): String = {
         val responseBuilder: StringBuilder = new StringBuilder
 
-        if( input % 3 == 0 ) responseBuilder.append(Foo)
-        if( input % 5 == 0 ) responseBuilder.append(Bar)
-        if( input % 7 == 0 ) responseBuilder.append(Qix)
+        if( input % 3 == 0 ) responseBuilder.append(FooBarQix.FOO)
+        if( input % 5 == 0 ) responseBuilder.append(FooBarQix.BAR)
+        if( input % 7 == 0 ) responseBuilder.append(FooBarQix.QIX)
 
         responseBuilder append utils.appendConsideringApparitionDigit( utils.splitIntOnDigit( input ) )
 

@@ -23,10 +23,10 @@ class FooBarQixUtils {
         digits.map {
             digit =>
                 digit match {
-                    case 3 => "Foo"
-                    case 5 => "Bar"
-                    case 7 => "Qix"
-                    case _ => ""
+                    case 3 => FooBarQix.FOO
+                    case 5 => FooBarQix.BAR
+                    case 7 => FooBarQix.QIX
+                    case _ => FooBarQix.EMPTY
                 }
         }.mkString
     }
