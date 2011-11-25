@@ -15,15 +15,11 @@ object FooBarQix {
 class FooBarQix(utils: FooBarQixUtils = new FooBarQixUtils) {
 
     def run(input: Int): String = {
-        val responseBuilder: StringBuilder = new StringBuilder
+        val fbqResponse: String =
+            appendConsideringDivisibleNumber(input) +
+            appendConsideringApparitionDigit( utils.splitIntOnDigit( input ) )
 
-        responseBuilder append appendConsideringDivisibleNumber(input)
-
-        responseBuilder append appendConsideringApparitionDigit( utils.splitIntOnDigit( input ) )
-
-        if( responseBuilder.isEmpty ) responseBuilder.append( input.toString )
-
-        responseBuilder.toString()
+        if( fbqResponse.isEmpty ) input.toString else fbqResponse
     }
 
     private def appendConsideringDivisibleNumber( input: Int ): String = {
