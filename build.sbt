@@ -2,8 +2,6 @@ name := "FooBarQix"
 
 version := "0.1"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.10.3"
 
-retrieveManaged := true
-
-libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"
